@@ -57,7 +57,7 @@ export default async function Home() {
         >
           {benefits.map(({ label, icon: Icon }) => (
             <li key={label} className="flex items-center space-x-2">
-              <Icon className="h-4 w-4 text-gray-500" />
+              <Icon className="h-4 w-4 text-[#1d9bf0]" />
               <span>{label}</span>
             </li>
           ))}
