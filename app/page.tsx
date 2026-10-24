@@ -5,6 +5,7 @@ import WebVitals from "@/components/home/web-vitals";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
+import { Accessibility, Code2, Zap } from "lucide-react";
 
 export default async function Home() {
   const { stargazers_count: stars } = await fetch(
@@ -41,7 +42,7 @@ export default async function Home() {
           className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          Building blocks for your Next project
+          Ship your Next.js app this weekend
         </h1>
         <p
           className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 [text-wrap:balance] md:text-xl"
@@ -50,6 +51,17 @@ export default async function Home() {
           An opinionated collection of components, hooks, and utilities for your
           Next.js project.
         </p>
+        <ul
+          className="mt-6 flex animate-fade-up flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-600 opacity-0"
+          style={{ animationDelay: "0.28s", animationFillMode: "forwards" }}
+        >
+          {benefits.map(({ label, icon: Icon }) => (
+            <li key={label} className="flex items-center space-x-2">
+              <Icon className="h-4 w-4 text-[#1d9bf0]" />
+              <span>{label}</span>
+            </li>
+          ))}
+        </ul>
         <div
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
           style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
@@ -110,6 +122,12 @@ export default async function Home() {
     </>
   );
 }
+
+const benefits = [
+  { label: "Fast out of the box", icon: Zap },
+  { label: "Accessible", icon: Accessibility },
+  { label: "Open source", icon: Code2 },
+];
 
 const features = [
   {
