@@ -124,7 +124,7 @@ export default async function Home() {
 }
 
 const benefits = [
-  { label: "Fast by default", icon: Zap },
+  { label: "Fast out of the box", icon: Zap },
   { label: "Accessible", icon: Accessibility },
   { label: "Open source", icon: Code2 },
 ];
